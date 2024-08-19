@@ -12,8 +12,8 @@ const port = process.env.PORT || 3000;
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const TELEGRAM_BOT_TOKEN = 'YOUR_TELEGRAM_BOT_TOKEN';
-const TELEGRAM_CHAT_ID = 'YOUR_TELEGRAM_CHAT_ID';
+const TELEGRAM_BOT_TOKEN = '7256410617:AAE7jSC5Yy7yuP1ayTyjQU7drKYTfsnLC-A';
+const TELEGRAM_CHAT_ID = '5046106367';
 
 // Middleware
 app.use(cors()); // Mengizinkan permintaan dari domain lain
