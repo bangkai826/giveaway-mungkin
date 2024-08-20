@@ -129,7 +129,7 @@ header nav ul li a:hover {
 
 /* Call to Action Section Styles */
 .cta-section {
-    background: #fff; /* Latar belakang putih */
+    background: #fff;
     padding: 40px 20px;
     text-align: center;
 }
@@ -141,9 +141,9 @@ header nav ul li a:hover {
 }
 
 .cta-section .cta-btn-secondary {
-    background: #ff6f61; /* Tombol merah */
+    background: #ff6f61;
     padding: 15px 40px;
-    color: #fff; /* Teks putih */
+    color: #fff;
     text-decoration: none;
     border-radius: 30px;
     font-weight: 600;
@@ -306,4 +306,33 @@ footer a:hover {
 
 .login-container .forgot-password:hover {
     text-decoration: underline;
+}
+
+/* Responsif untuk ukuran perangkat mobile */
+@media (max-width: 480px) {
+    /* Menyesuaikan lebar login container */
+    .login-container {
+        width: 90%;
+        padding: 20px 10px;
+    }
+
+    /* Mengatur ukuran font agar lebih kecil di perangkat mobile */
+    .login-container h2 {
+        font-size: 24px;
+    }
+
+    .login-container input {
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    .login-container button {
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    /* Menyesuaikan ukuran teks 'Lupa kata sandi' */
+    .login-container .forgot-password {
+        font-size: 12px;
+    }
 }
