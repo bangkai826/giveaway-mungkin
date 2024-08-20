@@ -252,15 +252,24 @@ footer a:hover {
     text-decoration: underline;
 }
 
-/* Styles untuk login.html */
+/* Login Section Styles */
+.login-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 100px); /* Mengurangi tinggi header dan footer */
+    background: #f0f2f5;
+    padding: 20px;
+}
+
 .login-container {
     background-color: white;
     padding: 40px 20px;
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    width: 360px;
+    width: 100%;
+    max-width: 400px;
     text-align: center;
-    margin: auto;
 }
 
 .login-container h2 {
@@ -308,31 +317,41 @@ footer a:hover {
     text-decoration: underline;
 }
 
-/* Responsif untuk ukuran perangkat mobile */
-@media (max-width: 480px) {
-    /* Menyesuaikan lebar login container */
+/* Feedback Styles */
+#feedback {
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: bold;
+}
+/* Responsive Styles */
+@media (max-width: 768px) {
     .login-container {
+        padding: 30px 15px;
         width: 90%;
-        padding: 20px 10px;
     }
 
-    /* Mengatur ukuran font agar lebih kecil di perangkat mobile */
+    header nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header nav ul li {
+        margin: 10px 0;
+    }
+}
+
+@media (max-width: 480px) {
     .login-container h2 {
-        font-size: 24px;
+        font-size: 28px;
     }
 
-    .login-container input {
-        padding: 12px;
-        font-size: 14px;
-    }
-
+    .login-container input,
     .login-container button {
-        padding: 12px;
         font-size: 14px;
+        padding: 12px;
     }
 
-    /* Menyesuaikan ukuran teks 'Lupa kata sandi' */
-    .login-container .forgot-password {
+    footer {
         font-size: 12px;
     }
 }
