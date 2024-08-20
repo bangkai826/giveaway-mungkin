@@ -364,11 +364,42 @@ header nav ul li a:hover {
         .hero p {
             font-size: 16px;
         }
+/* Media Query untuk perangkat dengan lebar maksimum 480px */
+@media only screen and (max-width: 480px) {
+    .login-section {
+        padding: 10px; /* Padding lebih kecil untuk perangkat kecil */
+    }
 
-        .login-container {
-            padding: 15px 5px;
-            width: 95%;
-        }
+    .login-container {
+        padding: 10px; /* Padding lebih kecil dalam container */
+        width: 100%;
+        max-width: 280px; /* Lebar maksimum lebih kecil pada perangkat kecil */
+    }
+
+    .login-container h2 {
+        font-size: 20px; /* Ukuran font lebih kecil untuk heading */
+    }
+
+    .login-container input, 
+    .login-container button {
+        padding: 8px; /* Padding lebih kecil untuk input dan button */
+        font-size: 14px; /* Ukuran font lebih kecil untuk input dan button */
+    }
+
+    .login-container .forgot-password {
+        font-size: 12px; /* Ukuran font lebih kecil untuk link lupa kata sandi */
+    }
+
+    /* Optional: Menyesuaikan elemen lain jika perlu */
+    .hero h1 {
+        font-size: 36px; /* Ukuran font lebih kecil pada hero section */
+    }
+
+    .hero p {
+        font-size: 18px; /* Ukuran font lebih kecil pada hero section */
+    }
+}
+
 
         .cta-section p,
         .cta-section .cta-btn-secondary {
