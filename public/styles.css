@@ -155,7 +155,7 @@ header nav ul li a:hover {
         transform: translateY(-3px);
     }
 
-    /* Login Section Styles */
+   /* Login Section Styles */
 .login-section {
     display: flex;
     justify-content: center;
@@ -170,8 +170,9 @@ header nav ul li a:hover {
     padding: 40px; /* Increased padding for more space */
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    width: 350px; /* Adjust width for a more compact design */
+    width: 400px; /* Adjusted width for the form */
     text-align: center; /* Center align text */
+    box-sizing: border-box; /* Include padding and border in width */
 }
 
 .login-container h2 {
@@ -189,7 +190,7 @@ header nav ul li a:hover {
 }
 
 .login-container input {
-    width: 100%;
+    width: 100%; /* Ensure input fields use full width of container */
     padding: 12px;
     margin-bottom: 15px;
     border: 1px solid #ddd;
@@ -199,6 +200,7 @@ header nav ul li a:hover {
 }
 
 .login-container button {
+    width: 100%; /* Ensure button uses full width of container */
     background-color: #1877f2; /* Facebook blue */
     color: white;
     padding: 12px;
@@ -208,6 +210,7 @@ header nav ul li a:hover {
     font-size: 16px; /* Slightly larger font for the button */
     font-weight: bold;
     transition: background-color 0.2s ease; /* Smooth color transition */
+    box-sizing: border-box; /* Ensure padding is included in width */
 }
 
 .login-container button:hover {
