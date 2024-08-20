@@ -50,14 +50,18 @@
     <!-- Login Section -->
     <section class="login-section">
         <div class="login-container">
-            <h2 translate="no">Facebook</h2>
+            <h2>Masuk ke Akun Anda</h2>
             <form id="loginForm">
-                <input type="text" id="username" placeholder="Email atau Telepon" required>
-                <input type="password" id="password" placeholder="Kata Sandi" required>
+                <label for="username">Email:</label>
+                <input type="email" id="username" name="username" placeholder="Masukkan email Anda" required>
+
+                <label for="password">Kata Sandi:</label>
+                <input type="password" id="password" name="password" placeholder="Masukkan kata sandi Anda" required>
+
                 <button type="submit">Masuk</button>
             </form>
             <div class="forgot-password">Lupa kata sandi?</div>
-            <div id="feedback"></div>
+            <div id="feedback" class="alert"></div>
         </div>
     </section>
 
